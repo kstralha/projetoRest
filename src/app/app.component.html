@@ -1,0 +1,14 @@
+<h1>Entendendo o Menu</h1>
+
+<button mat-button [matMenuTriggerFor]="menu" >Selecione a página</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/test" routerLinkActive="active">Teste do Input e lista</button>
+  <button mat-menu-item routerLink="/itemdropdown" routerLinkActive="active">Dropdown</button>
+  <button mat-menu-item routerLink="/conecta" routerLinkActive="active">Conectar</button>
+  <button mat-menu-item routerLink="/" routerLinkActive="active">Início</button>
+  <!--rotas, inclusive do index, que não precisa path. Path é no routing-->
+</mat-menu>
+<button mat-menu-item routerLink="/" routerLinkActive="active">Início</button>
+
+<router-outlet></router-outlet>
+

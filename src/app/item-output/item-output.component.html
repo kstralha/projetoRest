@@ -1,0 +1,38 @@
+<h2>Componente</h2>
+
+<label>Adicione um novo item na lista: <input #newItem /></label>
+<!-- nome para pegar no TS, importando como um filho (com o viewchild)-->
+<br />
+<button (click)="addNewItem(newItem.value)">Add item na lista</button>
+
+<button (click)="addNewOutroItem()">Add outro item na lista</button>
+<button (click)="remove()">Limpar</button>
+<!--a ação do botão precisa ser enviada para o TS, ou seja, a função addNeItem() será chamada para adicionar o valor do newItem, o parâmetro passado na função -->
+
+<ul>
+  <li *ngFor="let elemento of items">{{ elemento }}</li>
+  <!-- ngFor é um foreach no front que percorre a lista items, pegando o item do parâmetro -->
+</ul>
+
+<button (click)="removeItens()">Limpa lista 1</button>
+
+<hr />
+
+<h2>Componente2</h2>
+<!-- ngModel é um módulo do Angular que trata direto com o objeto
+  necessário acrescentar no app.module.ts: 
+  import { FormsModule } from '@angular/forms';
+no imports: FormsModule  -->
+
+<label>Adicione um novo item na lista: <input [(ngModel)]="valueItem" /></label>
+<!-- o #newItem é similar a esta composição do modelo -->
+<br />
+<button (click)="addNewItem2()">Add item na lista</button>
+<button (click)="remove2()">Limpar</button>
+
+<ul>
+  <li *ngFor="let elemento2 of itens2">{{ elemento2 }}</li>
+  <!-- ngFor é um for no front que percorre a lista items, pegando o item do parâmetro -->
+</ul>
+
+<button (click)="removeItens2()">Limpa lista 2</button>
